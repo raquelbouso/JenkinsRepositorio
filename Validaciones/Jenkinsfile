@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Lunes') {
             steps {
-		 sh 'exit 0'
+		 echo ''
             }
         }
 	stage('Martes') {
@@ -26,12 +26,12 @@ pipeline {
         }
         stage('Miercoles') {
           steps {
-		 sh 'exit 0'
+		 echo ''
             }
         }
         stage('Jueves') {
           steps {
-		 sh 'exit 0'
+		 echo ''
             }
         }
         stage('Viernes') {
