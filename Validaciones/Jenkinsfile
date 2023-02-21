@@ -4,12 +4,21 @@ def dias_letras =
     2: "Martes",
     3: "Miercoles",
     4: "Jueves",
-    5: "Viernes",
-    6: "Sabado",
-    7: "Domingo"]
+    5: "Viernes"]
 pipeline {
     agent any
     stages {
+	stage('Dias de la semana') {
+            steps {
+		    script {
+			  def i = 1
+			    while(i < 5) {
+				  println dias_letras[i]
+				   i = i + 1
+			    }
+		    }
+            }
+        }
         stage('Lunes') {
             steps {
 		 echo ''
