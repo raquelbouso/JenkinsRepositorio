@@ -12,33 +12,33 @@ pipeline {
     stages {
         stage('Lunes') {
             steps {
-		println dias_letras[dia]
+		println dias_letras[1]
             }
         }
 	stage('Martes') {
             steps {
               script {
-		println dias_letras[dia]
-                if (dia == 2) 
+		println dias_letras[2]
+                if (dias_letras[dia] == "Martes") 
                   println new Date()
               }
             }
         }
         stage('Miercoles') {
           steps {
-		println dias_letras[dia]
+		println dias_letras[3]
             }
         }
         stage('Jueves') {
           steps {
-		println dias_letras[dia]
+		println dias_letras[4]
             }
         }
         stage('Viernes') {
           steps {
 		script {
-			println dias_letras[dia]
-		      if (dia == 5)
+			println dias_letras[5]
+		      if (dias_letras[dia] == "Viernes")
 			println "Raquel Bouso"
 		  }
           }
