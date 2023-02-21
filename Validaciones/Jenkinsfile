@@ -12,9 +12,13 @@ pipeline {
     stages {
         stage('Lunes') {
             steps {
+		script {
+			if (dia == 1)
+			    continue
+		}
             }
         }
-		    stage('Martes') {
+	stage('Martes') {
             steps {
               script {
                 if (dia == 2) 
@@ -24,17 +28,27 @@ pipeline {
         }
         stage('Miercoles') {
           steps {
+		script {
+		  if (dia == 3)
+		    continue
+		}
             }
         }
         stage('Jueves') {
           steps {
+		script {
+		  if (dia == 4)
+		    continue
+		}
             }
         }
         stage('Viernes') {
           steps {
-              if (dia == 5)
-                println "Raquel Bouso"
-            }
+		script {
+		      if (dia == 5)
+			println "Raquel Bouso"
+		  }
+          }
         }
     }
 }
