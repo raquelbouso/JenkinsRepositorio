@@ -8,20 +8,13 @@ def dias_letras =
 pipeline {
     agent any
     stages {
-	stage('Dias de la semana') {
-            steps {
-		    script {
-			  def i = 1
-			    while(i <= 5) {
-				  println dias_letras[i]
-				   i = i + 1
-			    }
-		    }
-            }
-        }
+	
         stage('Lunes') {
             steps {
-		 echo ''
+		 script {
+                	if (dias_letras[dia] == "Lunes") 
+				echo ''
+		 }
             }
         }
 	stage('Martes') {
@@ -34,12 +27,18 @@ pipeline {
         }
         stage('Miercoles') {
           steps {
-		 echo ''
+		script {
+                	if (dias_letras[dia] == "Miercoles") 
+				echo ''
+		 }
             }
         }
         stage('Jueves') {
           steps {
-		 echo ''
+		 script {
+                	if (dias_letras[dia] == "Jueves") 
+				echo ''
+		 }
             }
         }
         stage('Viernes') {
