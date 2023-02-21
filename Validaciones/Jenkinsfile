@@ -12,15 +12,13 @@ pipeline {
     stages {
         stage('Lunes') {
             steps {
-		script {
-			if (dia == 1)
-			    continue
-		}
+		println dias_letras[dia]
             }
         }
 	stage('Martes') {
             steps {
               script {
+		println dias_letras[dia]
                 if (dia == 2) 
                   println new Date()
               }
@@ -28,23 +26,18 @@ pipeline {
         }
         stage('Miercoles') {
           steps {
-		script {
-		  if (dia == 3)
-		    continue
-		}
+		println dias_letras[dia]
             }
         }
         stage('Jueves') {
           steps {
-		script {
-		  if (dia == 4)
-		    continue
-		}
+		println dias_letras[dia]
             }
         }
         stage('Viernes') {
           steps {
 		script {
+			println dias_letras[dia]
 		      if (dia == 5)
 			println "Raquel Bouso"
 		  }
