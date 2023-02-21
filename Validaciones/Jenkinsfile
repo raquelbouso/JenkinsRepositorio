@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Lunes') {
             steps {
-		println dias_letras[1]
+		
             }
         }
 	stage('Martes') {
@@ -26,19 +26,19 @@ pipeline {
         }
         stage('Miercoles') {
           steps {
-		println dias_letras[3]
+		
             }
         }
         stage('Jueves') {
           steps {
-		println dias_letras[4]
+		
             }
         }
         stage('Viernes') {
           steps {
 		script {
 			println dias_letras[5]
-			if (dias_letras[dia] == "Martes") {
+			if (dias_letras[dia] == "Viernes") {
 				def cause = currentBuild.rawBuild.getCause(Cause.UserIdCause)
 				if (cause != null) {
     					def user = cause.userId ?: 'anonymous'
