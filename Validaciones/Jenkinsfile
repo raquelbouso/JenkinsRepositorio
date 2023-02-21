@@ -18,7 +18,6 @@ pipeline {
 	stage('Martes') {
             steps {
               script {
-		println dias_letras[2]
                 if (dias_letras[dia] == "Martes") 
                   println new Date()
               }
@@ -37,7 +36,6 @@ pipeline {
         stage('Viernes') {
           steps {
 		script {
-			println dias_letras[5]
 			if (dias_letras[dia] == "Viernes") {
 				def cause = currentBuild.rawBuild.getCause(Cause.UserIdCause)
 				if (cause != null) {
