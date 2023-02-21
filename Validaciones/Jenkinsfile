@@ -38,8 +38,15 @@ pipeline {
           steps {
 		script {
 			println dias_letras[5]
-		      if (dias_letras[dia] == "Viernes")
-			println "Raquel Bouso"
+			if (dias_letras[dia] == "Martes") {
+				def cause = currentBuild.rawBuild.getCause(Cause.UserIdCause)
+				if (cause != null) {
+    					def user = cause.userId ?: 'anonymous'
+    					echo "started by ${user}"
+				} else {
+   					 echo "started some other way"
+				}
+			}
 		  }
           }
         }
