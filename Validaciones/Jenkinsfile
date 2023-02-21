@@ -1,0 +1,40 @@
+def dia = new Date().getDay()
+def dias_letras =
+   [1: "Lunes",
+    2: "Martes",
+    3: "Miercoles",
+    4: "Jueves",
+    5: "Viernes",
+    6: "Sabado",
+    7: "Domingo"]
+pipeline {
+    agent any
+    stages {
+        stage('Lunes') {
+            steps {
+            }
+        }
+		    stage('Martes') {
+            steps {
+              script {
+                if (dia == 2) 
+                  println new Date()
+              }
+            }
+        }
+        stage('Miercoles') {
+          steps {
+            }
+        }
+        stage('Jueves') {
+          steps {
+            }
+        }
+        stage('Viernes') {
+          steps {
+              if (dia == 5)
+                println "Raquel Bouso"
+            }
+        }
+    }
+}
